@@ -1,0 +1,2 @@
+ALTER TABLE eg_service_definition
+DROP CONSTRAINT pk_eg_service_definition;

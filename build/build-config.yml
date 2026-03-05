@@ -1,0 +1,213 @@
+#
+# config:
+# -   name: < Name of the job, foo/bar would create job named bar inside folder foo >
+#     build:
+#     - work-dir: < Working directory of the app to be built >
+#       dockerfile: < Path to the dockerfile, optional, assumes dockerfile in working directory if not provided >
+#       image-name: < Docker image name  >
+# -
+# -
+#
+# config:
+# -   name: < Name of the job, foo/bar would create job named bar inside folder foo >
+#     build:
+#     - work-dir: < Working directory of the app to be built >
+#       dockerfile: < Path to the dockerfile, optional, assumes dockerfile in working directory if not provided >
+#       image-name: < Docker image name  >
+# -
+# -
+config:
+# Core Services
+  - name: "builds/Digit-Core/core-services/egov-enc-service"
+    build:
+      - work-dir: "core-services/egov-enc-service"
+        image-name: "egov-enc-service"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-enc-service/src/main/resources/db"
+        image-name: "egov-enc-service-db"
+
+  - name: "builds/Digit-Core/core-services/egov-filestore"
+    build:
+      - work-dir: "core-services/egov-filestore"
+        image-name: "egov-filestore"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-filestore/src/main/resources/db"
+        image-name: "egov-filestore-db"
+
+  - name: "builds/Digit-Core/core-services/egov-idgen"
+    build:
+      - work-dir: "core-services/egov-idgen"
+        image-name: "egov-idgen"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-idgen/src/main/resources/db"
+        image-name: "egov-idgen-db"
+
+  - name: "builds/Digit-Core/core-services/egov-indexer"
+    build:
+      - work-dir: "core-services/egov-indexer"
+        image-name: "egov-indexer"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-indexer/src/main/resources/db"
+        image-name: "egov-indexer-db"
+
+  - name: "builds/Digit-Core/core-services/egov-localization"
+    build:
+      - work-dir: "core-services/egov-localization"
+        image-name: "egov-localization"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-localization/src/main/resources/db"
+        image-name: "egov-localization-db"
+
+  - name: "builds/Digit-Core/core-services/egov-location"
+    build:
+      - work-dir: "core-services/egov-location"
+        image-name: "egov-location"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-location/src/main/resources/db"
+        image-name: "egov-location-db"
+
+  - name: "builds/Digit-Core/core-services/boundary-service"
+    build:
+      - work-dir: "core-services/boundary-service"
+        image-name: "boundary-service"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/boundary-service/src/main/resources/db"
+        image-name: "boundary-service-db"
+
+  - name: "builds/Digit-Core/core-services/mdms-v2"
+    build:
+      - work-dir: "core-services/egov-mdms-service"
+        image-name: "mdms-v2"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-mdms-service/src/main/resources/db"
+        image-name: "mdms-v2-db"
+
+  - name: "builds/Digit-Core/core-services/egov-notification-mail"
+    build:
+      - work-dir: "core-services/egov-notification-mail"
+        image-name: "egov-notification-mail"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/egov-notification-sms"
+    build:
+      - work-dir: "core-services/egov-notification-sms"
+        image-name: "egov-notification-sms"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/egov-otp"
+    build:
+      - work-dir: "core-services/egov-otp"
+        image-name: "egov-otp"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-otp/src/main/resources/db"
+        image-name: "egov-otp-db"
+
+  - name: "builds/Digit-Core/core-services/egov-persister"
+    build:
+      - work-dir: "core-services/egov-persister"
+        image-name: "egov-persister"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/egov-pg-service"
+    build:
+      - work-dir: "core-services/egov-pg-service"
+        image-name: "egov-pg-service"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-pg-service/src/main/resources/db"
+        image-name: "egov-pg-service-db"
+
+  - name: "builds/Digit-Core/core-services/egov-searcher"
+    build:
+      - work-dir: "core-services/egov-searcher"
+        image-name: "egov-searcher"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/egov-user"
+    build:
+      - work-dir: "core-services/egov-user"
+        image-name: "egov-user"
+        dockerfile: "build/maven-java8/Dockerfile"
+      - work-dir: "core-services/egov-user/src/main/resources/db"
+        image-name: "egov-user-db"
+
+  - name: "builds/Digit-Core/core-services/egov-workflow-v2"
+    build:
+      - work-dir: "core-services/egov-workflow-v2"
+        image-name: "egov-workflow-v2"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-workflow-v2/src/main/resources/db"
+        image-name: "egov-workflow-v2-db"
+
+  - name: "builds/Digit-Core/core-services/user-otp"
+    build:
+      - work-dir: "core-services/user-otp"
+        image-name: "user-otp"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/gateway"
+    build:
+      - work-dir: "core-services/gateway"
+        image-name: "gateway"
+        dockerfile: "build/maven/Dockerfile"
+        
+  - name: "builds/Digit-Core/core-services/egov-user-event"
+    build:
+      - work-dir: "core-services/egov-user-event"
+        image-name: "egov-user-event"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-user-event/src/main/resources/db"
+        image-name: "egov-user-event-db"       
+
+  - name: "builds/Digit-Core/core-services/pdf-service"
+    build:
+      - work-dir: "core-services/pdf-service"
+        image-name: "pdf-service"
+      - work-dir: "core-services/pdf-service/migration"
+        image-name: "pdf-service-db"
+  
+  - name: "builds/Digit-Core/core-services/egov-url-shortening"
+    build:
+      - work-dir: "core-services/egov-url-shortening"
+        image-name: "egov-url-shortening"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/egov-url-shortening/src/main/resources/db"
+        image-name: "egov-url-shortening-db"
+
+  - name: "builds/Digit-Core/core-services/libraries/enc-client"
+    build:
+      - work-dir: "core-services/libraries/enc-client"
+        image-name: "enc-client"
+
+  - name: "builds/Digit-Core/core-services/libraries/mdms-client"
+    build:
+      - work-dir: "core-services/libraries/mdms-client"
+        image-name: "mdms-client"
+
+  - name: "builds/Digit-Core/core-services/libraries/tracer"
+    build:
+      - work-dir: "core-services/libraries/tracer"
+        image-name: "tracer"
+
+  - name: "builds/Digit-Core/core-services/libraries/digit-models"
+    build:
+      - work-dir: "core-services/libraries/digit-models"
+        image-name: "digit-models"
+
+  - name: "builds/Digit-Core/core-services/libraries/services-common"
+    build:
+      - work-dir: "core-services/libraries/services-common"
+        image-name: "services-common"
+
+  - name: "builds/Digit-Core/core-services/inbox"
+    build:
+      - work-dir: "accelerators/inbox"
+        image-name: "inbox"
+        dockerfile: "build/maven/Dockerfile"
+
+  - name: "builds/Digit-Core/core-services/health-service-request"
+    build:
+      - work-dir: "core-services/health-service-request"
+        image-name: "service-request"
+        dockerfile: "build/maven/Dockerfile"
+      - work-dir: "core-services/service-request/src/main/resources/db"
+        image-name: "service-request-db"
